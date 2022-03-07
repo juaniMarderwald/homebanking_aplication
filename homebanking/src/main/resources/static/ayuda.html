@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sidebar_style.css">
+
+    <!--BOX ICON-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <!--SWEET ALERT-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <title>Ayuda</title>
+</head>
+
+<body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
+
+    <main>
+        <div class="d-flex">
+
+            <div class="sidebar active">
+                <div class="logo_content">
+                    <div class="logo">
+                        <img src="img/logo_blanco_freebanking.png" class="img_logo">
+                        <div class="logo_name"> Freebanking</div>
+                    </div>
+                    <i class='bx bx-menu' id="boton"></i>
+                </div>
+                <ul class="nav_list">
+
+                    <li>
+                        <a href="accounts.html">
+                            <i class='bx bxs-home bx-tada-hover'></i>
+                            <span class="links_name">Inicio</span>
+                        </a>
+                        <span class="tooltip">Inicio</span>
+                    </li>
+
+                    <li>
+                        <a href="transfers.html">
+                            <i class='bx bx-transfer bx-tada-hover'></i>
+                            <span class="links_name">Transferencias</span>
+                        </a>
+                        <span class="tooltip">Transferencias</span>
+                    </li>
+
+                    <li>
+                        <a href="payment.html">
+                            <i class='bx bx-wallet bx-tada-hover'></i>
+                            <span class="links_name">Realizar Pago</span>
+                        </a>
+                        <span class="tooltip">Realizar Pago</span>
+                    </li>
+                    
+
+                    <li>
+                        <a href="404.html">
+                            <i class='bx bxs-bank bx-tada-hover'></i>
+                            <span class="links_name">Inversiones</span>
+                        </a>
+                        <span class="tooltip">Inversiones</span>
+                    </li>
+                    <li>
+                        <a href="loan_application.html">
+                            <i class='bx bx-money-withdraw bx-tada-hover'></i>
+                            <span class="links_name">Prestamos</span>
+                        </a>
+                        <span class="tooltip">Prestamos</span>
+                    </li>
+                    <li>
+                        <a href="cards.html">
+                            <i class='bx bx-credit-card bx-tada-hover'></i>
+                            <span class="links_name">Tus tarjetas</span>
+                        </a>
+                        <span class="tooltip">Tus tarjetas</span>
+                    </li>
+
+                    <li>
+                        <a href="criptomonedas.html">
+                            <i class='bx bxl-bitcoin bx-tada-hover'></i>
+                            <span class="links_name">Critpmonedas</span>
+                        </a>
+                        <span class="tooltip">Cripto</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-help-circle bx-tada-hover'></i>
+                            <span class="links_name">Ayuda</span>
+                        </a>
+                        <span class="tooltip">Ayuda</span>
+                    </li>
+                    <li>
+                        <a href="terminos_de_uso.html">
+                            <i class='bx bx-cog icon bx-tada-hover'></i>
+                            <span class="links_name">Terminos de uso</span>
+                        </a>
+                        <span class="tooltip"> Terminos </span>
+                    </li>
+                </ul>
+               
+            </div>
+
+          
+            <div class="d-flex flex-column " id="main-information">
+
+                <div id="accounts">
+                    <div class="d-flex " id="header">
+                        <h1 v-cloak> Bienvenido, {{capitalizeWord(cliente)}}!! </h1>
+
+                        <!-- DROPDOWN MENU que se despliega al posarte sobra la inicial del cliente -->
+                        <div class="dropdown">
+                            <button class="dropbtn" id="circulo_nombre">
+                                <p v-cloak>{{toUpper(cliente[0])}}</p>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown_item"><i class='bx bxs-edit'></i>Configuracion</a>
+                                <a href="#" class="dropdown_item"><i class='bx bx-user'></i>Perfil</a>
+                                <hr>
+                                <a href="#"> <button v-on:click="cerrarSesion()" class="logout_button dropdown_item"><i
+                                            class='bx bx-log-out'></i> Logout</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex flex-wrap">
+                    <div class="col-5 m-3">
+
+                        <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#robo_tarjeta">
+                            <h2>Me robaron/perdí mi Tarjeta de Crédito
+                            </h2>
+                        </button>
+                        <br>
+                        <div id="robo_tarjeta" class="collapse">
+                            <br>
+                            <p>
+                                Comunicate con el Centro de Denuncias Visa o Mastercard, según corresponda:
+    
+                                Visa: 4379-3333, desde el exterior EEUU (s/cargo) 1-800-396-9665.
+    
+                                Otros (cobro revertido): 1-303-967-1098.
+    
+                                Mastercard: 4340-5700. En el interior: 0810-999-5700. En el exterior: (cobro revertido)
+                                5411-4340-5656.
+    
+    
+    
+                                Me robaron/perdí mi Tarjeta de Débito
+    
+    
+                                Para realizar la denuncia comunicate con el Centro de Servicios Banelco al 4320-2500 opción
+                                1.
+                            </p>
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#gastoNoRealizado">
+                            <h2>Gasto que no realicé</h2>
+                            </h2>
+                        </button>
+                        <br>
+                        <div id="gastoNoRealizado" class="collapse">
+                            <p>
+                                Para desconocer un gasto realizado con tu Tarjeta de Crédito, comunicate con la marca de la
+                                tarjeta a los siguientes teléfonos:
+    
+                                Visa
+    
+                                Classic: (011) 4379-3400 (CABA y GBA); Resto del país 0810-666-3400.
+    
+                                Gold: (011) 4378-4444 (CABA y GBA); Resto del país 0810-666-4653.
+    
+                                Platinum: 0-800-333-7528 | Signature: 0-800-222-7446.
+    
+                                Mastercard
+    
+                                Infoline (011) 4348-7000 | Gold Line (011) 4348-7007 | Platinum Line 0800-999-3999 | Black
+                                Line
+                                0800-999-3297.
+    
+                                En mis movimientos de cuenta aparece un gasto de Tarjeta de Débito que no realicé
+                                Para desconocer un gasto realizado con tu Tarjeta de Débito, comunicate con el Centro de
+                                Servicios Prisma 4379-3394 de 9 a 21 hs.</p>
+                        </div>
+    
+                        
+                        <br>
+    
+                        <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#delitosInformaticos">
+                            <h2>Para denunciar delitos informáticos.</h2>
+                            </h2>
+                        </button>
+                        <br>
+                        <div id="delitosInformaticos" class="collapse">
+    
+                            <p>
+                                Ponemos a tu disposición los siguientes canales para efectuar denuncias de Fraude informático o
+                                Phishing: telefónicamente a través del 0800-333-0303 ó 4346-4800, por Formulario Electrónico o
+                                en nuestra Red de Sucursales.
+        
+                                Aprovechamos esta oportunidad para recordarte algunas medidas de seguridad a tener en cuenta: No
+                                responder e-mail donde se soliciten datos personales. No ingresar a Banca Nnline desde links
+                                incluidos en e-mails. Verificar la dirección del sitio que se está navegando.
+                            </p>
+                        </div>
+    
+    
+                    </div>
+                    <div class="col-5">    
+                        
+                        <button type="button" class="btn btn-light" data-toggle="collapse" data-target="#descuentoPromo">
+                            <h2>No me hicieron el descuento de una promoción, ¿qué tengo que hacer?</h2>
+                            </h2>
+                        </button>
+                        <div id="descuentoPromo" class="collapse">
+    
+                            <p>
+                                Tené en cuenta que los descuentos por promociones se acreditan a los 60 días de realizada la
+                                compra. Si ya transcurrió el plazo y aún no obtuviste el descuento, iniciá el reclamo desde el
+                                hombanking, siguiendo estos pasos:
+        
+                                Ingresá a Banca Online con tu Usuario y Clave Digital
+        
+                                Seleccioná la Tarjeta con la que hiciste la compra
+        
+                                Seleccioná "Movimientos" y en el menú desplegable de la izquierda "Últimos movimientos" clickeá
+                                el resumen donde esté el consumo.
+        
+                                Clickeá el botón azul "Iniciar reclamo" y seguí las indicaciones.
+        
+                                El cajero automático me retuvo la Tarjeta de Débito
+                                Comunicate con el Centro de Servicios Banelco al 4320-2500 opción 5.
+        
+                                Dudas por una comisión en mi resumen
+                                Podés canalizar tu consulta a través de Banca Online en la opción "Atención al Cliente" (arriba
+                                a la derecha).
+        
+                                Aviso de viaje para habilitar tarjetas
+                                Habilitá tus tarjetas desde la app Go, en el menú lateral, seleccioná "Mis Tarjetas", ingresá tu
+                                DNI, Usuario y Clave Digital, luego seleccioná la tarjeta que querés registrar > "Más Opciones"
+                                > "Aviso de Viaje" > "Registrar nuevo viaje".
+                                También podés dar aviso de viaje a través de Visa o Mastercard según corresponda:
+        
+                                Mastercard comunicate al 4348-7000 o a través de la web www.masterconsultas.com.ar y seleccioná
+                                la opción "Registro de viajes".
+        
+                                Visa registrá tu viaje en Visa Home o comunicate a los teléfonos:
+        
+                                Classic: (011) 4379-3400 (CABA y GBA); Resto del país 0810-666-3400.
+        
+                                Gold: (011) 4378-4444 (CABA y GBA); Resto del país 0810-666-4653.
+        
+                                Platinum: 0-800-333-7528.
+        
+                                Signature: 0-800-222-7446.</p>
+    
+                        </div>
+    
+                        
+    
+    
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Scripts para funcionalidades extras, Vue, iconos, Bootstrap, etc-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Scripts para los iconos de Box Icon-->
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+
+    <!--Jquery para poder hacer el preloader-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    
+
+    <!-- Scripts para funcionalidades de Javascript-->
+    <script src="Javascript/preloader.js"></script>
+    <script src="Javascript/index.js"></script>
+    <script src="Javascript/accounts.js"></script>
+    <script src="Javascript/manager.js"></script>
+    <script src="Javascript/sidebar.js"></script>
+
+</body>
+
+</html>

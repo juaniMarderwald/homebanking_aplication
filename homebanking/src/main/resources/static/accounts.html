@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sidebar_style.css">
+
+    <!--FONT AWESOME-->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+
+    <!--FONTS GOOGLE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,800;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- font-family: 'Poppins', sans-serif; -->
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+
+    <!--BOX ICON-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--SWEET ALERT-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--CHART.JS-->
+    <script src="Javascript/chart.js"></script>
+    
+    <!--SPINNER LOAD-->
+    <script src="https://unpkg.com/vue-ui-preloader"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/vue-ui-preloader/dist/loader.css">
+
+
+
+
+    <title>Tus cuentas</title>
+</head>
+
+<body>
+
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
+
+    <main>
+        <div class="d-flex">
+
+            <div class="sidebar active">
+                <div class="logo_content">
+                    <div class="logo">
+                        <img src="img/logo_blanco_freebanking.png" class="img_logo">
+                        <div class="logo_name"> Freebanking</div>
+                    </div>
+                    <i class='bx bx-menu' id="boton"></i>
+                </div>
+                <ul class="nav_list">
+
+                    <li>
+                        <a href="accounts.html">
+                            <i class='bx bxs-home bx-tada-hover'></i>
+                            <span class="links_name">Inicio</span>
+                        </a>
+                        <span class="tooltip">Inicio</span>
+                    </li>
+
+                    <li>
+                        <a href="transfers.html">
+                            <i class='bx bx-transfer bx-tada-hover'></i>
+                            <span class="links_name">Transferencias</span>
+                        </a>
+                        <span class="tooltip">Transferencias</span>
+                    </li>
+
+                    <li>
+                        <a href="payment.html">
+                            <i class='bx bx-wallet bx-tada-hover'></i>
+                            <span class="links_name">Realizar Pago</span>
+                        </a>
+                        <span class="tooltip">Realizar Pago</span>
+                    </li>
+                    <li>
+                        <a href="404.html">
+                            <i class='bx bxs-bank bx-tada-hover'></i>
+                            <span class="links_name">Inversiones</span>
+                        </a>
+                        <span class="tooltip">Inversiones</span>
+                    </li>
+                    <li>
+                        <a href="loan_application.html">
+                            <i class='bx bx-money-withdraw bx-tada-hover'></i>
+                            <span class="links_name">Prestamos</span>
+                        </a>
+                        <span class="tooltip">Prestamos</span>
+                    </li>
+                    <li>
+                        <a href="cards.html">
+                            <i class='bx bx-credit-card bx-tada-hover'></i>
+                            <span class="links_name">Tus tarjetas</span>
+                        </a>
+                        <span class="tooltip">Tus tarjetas</span>
+                    </li>
+
+                    <li>
+                        <a href="criptomonedas.html">
+                            <i class='bx bxl-bitcoin bx-tada-hover'></i>
+                            <span class="links_name">Critpmonedas</span>
+                        </a>
+                        <span class="tooltip">Cripto</span>
+                    </li>
+                    <li>
+                        <a href="ayuda.html">
+                            <i class='bx bx-help-circle bx-tada-hover'></i>
+                            <span class="links_name">Ayuda</span>
+                        </a>
+                        <span class="tooltip">Ayuda</span>
+                    </li>
+                    <li>
+                        <a href="terminos_de_uso.html">
+                            <i class='bx bx-cog icon bx-tada-hover'></i>
+                            <span class="links_name">Terminos de uso</span>
+                        </a>
+                        <span class="tooltip"> Terminos </span>
+                    </li>
+                </ul>
+                <!-- <div class="profile_content">
+                    <div class="profile">
+                        <div class="profile_details">
+                            <div class="name_job" id="sesion">
+                                <button v-on:click="cerrarSesion()"><i class='bx bx-log-out' id="log_out"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div id="main-information">
+                <div id="accounts">
+                    <div class="d-flex " id="header">
+                        <h1 v-cloak> Bienvenido, {{capitalizeWord(cliente)}}!! </h1>
+
+                        <!-- DROPDOWN MENU que se despliega al posarte sobra la inicial del cliente -->
+                        <div class="dropdown">
+                            <button class="dropbtn" id="circulo_nombre">
+                                <p v-cloak>{{toUpper(cliente[0])}}</p>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown_item"><i class='bx bxs-edit'></i>Configuracion</a>
+                                <a href="#" class="dropdown_item"><i class='bx bx-user'></i>Perfil</a>
+                                <hr>
+                                <a href="#"> <button v-on:click="cerrarSesion()" class="logout_button dropdown_item"><i
+                                            class='bx bx-log-out'></i> Logout</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr>
+                    <div class="d-flex ">
+
+                        <div>
+
+                            <div class="d-flex flex-wrap">
+                                <!-- Cards que muestran las cuentas del Cliente en cuestion  -->
+                                <div class="d-flex flex-column flex-wrap info_cards_client">
+                                    <h2> Tus cuentas</h2>
+                                    <hr>
+                                    <div class="fila_cuentas_encabezado">
+                                        <p class="primer_elemento_encabezado">Tipo</p>
+                                        <p class="elemento_fila_cuentas">Numero de cuenta</p>
+                                        <p class="elemento_fila_cuentas">Saldo</p>
+                                    </div>
+                                    <div class="d-flex flex-column flex-wrap">
+                                        <div v-for="account in cuentas">
+                                            <div class="fila_cuentas">
+                                                <template v-if="account.accountType=='CAJA_AHORRO'">
+                                                    <p class="primer_elemento_encabezado "><i class='bx bxs-wallet'></i>
+                                                        Caja de Ahorro</p>
+                                                </template>
+                                                <template v-if="account.accountType=='CUENTA_CORRIENTE'">
+                                                    <p class="primer_elemento_encabezado "><i class='bx bx-money'></i>
+                                                        Cuenta Corriente</p>
+                                                </template>
+                                                <p class="elemento_fila_cuentas">{{account.number}}</p>
+                                                <p class="elemento_fila_cuenta_saldo elemento_fila_cuentas">$
+                                                    {{account.balance}}</p>
+                                                <a v-bind:href="'./account.html?id=' + account.id"
+                                                    class="btn btn-light">Ver detalles de cuenta</a>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div v-if="cuentas.length<3">
+                                <button v-on:click="showTipoCuenta()" class="btn btn-primary btn-nueva-cuenta"> Nueva
+                                    Cuenta</button>
+                                <template v-if="mostrarTipoCuenta">
+                                    <h2>Elija el tipo de cuenta a crear</h2>
+                                    <select v-model="tipoCuenta" class="form-select" name="tipoCuenta"
+                                        aria-label="Default select example">
+                                        <option value="CAJA_AHORRO">Caja de ahorro</option>
+                                        <option value="CUENTA_CORRIENTE">Cuenta Corriente</option>
+                                    </select>
+                                    <button v-on:click="createAccount()" class="btn btn-primary"> Crear nueva cuenta
+                                    </button>
+                                </template>
+                            </div>
+
+
+                            <!-- Cards que muestran los prestamos del Cliente en cuestion  -->
+
+                            <div class="d-flex flex-wrap">
+                                <div class="d-flex flex-column flex-wrap info_cards_client">
+                                    <div class="d-flex">
+                                        <h2>PRESTAMOS</h2>
+                                        <a href="loan_application.html"><i class='bx bx-plus nuevo_prestamo'></i></a>
+                                    </div>
+                                    <hr>
+                                    <template v-if="loans.length !=0">
+                                        <div class="fila_cuentas_encabezado">
+                                            <p class="primer_elemento_encabezado">Tipo de Prestamo</p>
+                                            <p class="elemento_fila_prestamos">Cantidad de cuotas</p>
+                                            <p class="elemento_fila_prestamos">Valor de la cuota</p>
+                                            <p class="ultimo_elemento_encabezado">Monto a pagar</p>
+                                        </div>
+                                        <div v-for="loan in loans">
+                                            <!-- <div class="card text-white bg-secondary m-3" style="max-width: 18rem;">
+                                            <div class="card-header"> {{loan.name}}</div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Numero de Cuotas a pagar</h5>
+                                                <p class="card-text">{{loan.payments}}</p>
+                                                <h5>Monto A pagar</h5>
+                                                <p class="card-text">$ {{loan.amount}}</p>
+                                            </div>
+                                        </div> -->
+
+
+                                            <div class="fila_cuentas">
+                                                <p class="primer_elemento_encabezado">{{loan.name}} </p>
+                                                <p class="elemento_fila_prestamos">{{loan.payments}}</p>
+                                                <p class="elemento_fila_prestamos">$
+                                                    {{valorCuota(loan.amount,loan.payments)}}</p>
+                                                <p class="ultimo_elemento_encabezado elemento_saldo_loan ">
+                                                    ${{loan.amount}}</p>
+                                            </div>
+
+                                        </div>
+                                    </template>
+                                    <template v-if="loans.length==0">
+                                        <div class="d-flex justify-content-around">
+                                            <h2>Usted no posee Prestamos al día de la fecha</h2>
+                                            <a href="loan_application.html"
+                                                class="btn btn-light btn-nuevo-prestamo">Adquirir un prestamo</a>
+                                        </div>
+
+                                    </template>
+                                </div>
+
+
+                            </div>
+
+                            <!-- GRAFICO DE BALANCE DE LA CUENTA-->
+                        
+
+                           
+
+                            <!-- <footer>
+                                <hr>
+                                <div>Homebanking Application @2022-All Rights Reserved | Diseñado por Juan Ignacio
+                                    Marderwald
+                                </div>
+                            </footer> -->
+
+                        </div>
+
+                       
+                        <div class="info_cards_client info_card_latest_movimientos">
+
+                            <h2>Ultimos movimientos</h2>
+                            <hr>
+                            <div>
+
+                            </div>
+
+                            <div v-for="transaccion in transacciones()">
+                                <div class="fila_ultimos_movimientos">
+                                    <div class="fecha_ultimos_movimientos">
+                                        <p class="elemento_mes" v-cloak>{{getMonth(transaccion.date)}} </p>
+                                        <P class="elemento_dia" v-cloak>{{getDay(transaccion.date)}}</P>
+                                    </div>
+                                    <p class="elemento_ultimos_movimientos" v-cloak>{{transaccion.description}}</p>
+                                    <div class="monto_ultimos_movimientos">
+                                        <template v-if="transaccion.type=='CREDITO'">
+                                            <p class="elemento_saldo saldo_positivo" v-cloak>${{transaccion.amount}}</p>
+                                        </template>
+
+                                        <template v-if="transaccion.type=='DEBITO'">
+                                            <p class="elemento_saldo saldo_negativo" v-cloak>-${{transaccion.amount}}</p>
+                                        </template>
+
+                                        <p class="elemento_hora" v-cloak>{{getHour(transaccion.date)}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href=""></a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div id="newChart" class="info_cards_client">
+                    <h2 v-cloak>{{ message }}</h2>                   
+                </select>
+                
+                    <chart></chart>
+                </div>
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Scripts para funcionalidades extras, Vue, iconos, Bootstrap, etc-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+
+
+    <!-- Scripts para los iconos de Box Icon-->
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+
+    <!-- Chart par Vue -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+    <!-- Scripts para funcionalidades de Javascript-->
+    <script src="Javascript/preloader.js"></script>
+    <script src="Javascript/chartProperties.js"></script>
+    <script src="Javascript/accounts.js"></script>
+    <!--<script src="Javascript/manager.js"></script>-->
+    <script src="Javascript/index.js"></script>
+    <script src="Javascript/sidebar.js"></script>
+
+
+</body>
+
+</html>

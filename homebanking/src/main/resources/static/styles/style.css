@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0px;
+    box-sizing: border-box;
+
+
+}
+/********PROPIEDADES DEL PRELOADER***********/
+.loader_bg{
+    position: fixed;  
+    top: 0px;
+    z-index: 999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+.loader{
+    border: 0 soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid blue;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/**********************************/
+
+[v-cloak] {
+    display: none
+}
+
+h2, h3 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+#user_icon {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+
+#header {
+
+    background: none;
+    /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #004e92, #000428);   Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to left, #004e92, #000428);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 75%;
+    align-items: center;
+    display: flex;
+}
+
+#header div p {
+    font-size: 30px;
+    padding-left: 30%;
+    color: cornsilk;
+}
+
+#nombre_saludo {
+    color: cornsilk;
+    font-family: 'Oswald', sans-serif;
+    margin-left: 30px;
+}
+
+a {
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    color: cornsilk;
+}
+
+.main {
+    margin: 10px;
+}
+
+.mainScreen1 {
+    width: 60%;
+}
+
+.mainScreen2 {
+    width: 40%;
+}
+
+
+/* .card{
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+} */
+
+.tus_cuentas {
+    width: 100px;
+    height: 100px;
+}
+
+.bank {
+    width: 70px;
+    height: 70px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 440px;
+}
+
+#main-information {
+    padding-left: 6.3rem;
+    padding-top: 2rem;
+    overflow: auto;
+}
+
+#credit_card {
+    width: 250px;
+    height: 250px;
+}
+
+#credit_card_information {
+    margin: 2rem 15rem;
+}
+
+/*********************************************/
+/******************SIDEBAR *******************/
+
+/* .logo{
+    width: 150px;
+    height: 150px;
+    margin: 15px 50px;
+} */
+
+.sidebar {
+    width: 300px;
+    height: 100vh;
+
+    background: #000428;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #004e92, #000428);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #004e92, #000428);
+    /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+
+    left: 0;
+    top: 0;
+}
+
+#side_menu {
+    padding-top: 50px;
+}
+
+.iconos_menu {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    padding-left: 10px;
+}
+
+.iconos_menu:hover {
+    border-left-style: outset;
+    border-left-width: 5px;
+    border-left-color: honeydew;
+    text-decoration: none;
+}
+
+.icon_money {
+    font-size: 2rem;
+}
+
+.menu_text:hover {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+.iconify {
+    margin: 5px;
+}
+
+.linea {
+    background-color: white;
+}
+
+.nav_list {
+    padding-left: 0;
+}
+
+/*********************************************/
+/************Info Cards Clients***************/
+
+.info_cards_client {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+    padding: 20px 5px 20px 0px;
+    margin: 10px;
+}
+
+.fila_cuentas_encabezado{
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+}
+
+.primer_elemento_encabezado{
+    padding-left: 0px;
+    width:300px;
+}
+
+.ultimo_elemento_encabezado{
+    padding-right: 0px;
+    width:250px;
+}
+
+.elemento_fila_prestamos{
+    width:350px;
+    text-align: center;
+}
+
+.elemento_fila_cuentas{
+    width:400px;
+    text-align: center;
+}
+
+.elemento_fila_cuenta_saldo{
+    font-size: 25px;
+    font-weight: 600;
+    color: #004e92;
+}
+
+.elemento_saldo_loan{
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(173, 23, 23);
+}
+
+.fecha_ultimos_movimientos{
+    display: flex;
+    flex-direction: column;
+}
+
+.fila_cuentas{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    color: grey;
+    /* padding-left: 5px; */
+    transition: 0.4s ease;
+    cursor: pointer;
+    
+}
+
+.fila_cuentas:hover{
+    background-color: rgb(240, 239, 239);
+    border-left: 5px solid  #004e92;
+    color: #004e92;        
+}
+
+.fila_cuentas:hover .elemento_fila_cuenta_saldo{
+    font-size: 28px;
+}
+
+.btn-nueva-cuenta{
+    margin-left: 10px;
+}
+
+.btn-nuevo-prestamo{
+    margin-left: 52vh;
+}
+
+.btn-nuevo-prestamo:hover{
+    background-color: rgb(240, 239, 239);
+}
+
+
+.fila_cuentas:hover .btn{
+    background-color:  rgb(209, 208, 208);
+}
+.fila_ultimos_movimientos{
+    display: flex;
+}
+
+.elemento_ultimos_movimientos{
+   padding: 0rem 1rem ;
+   width: 18rem;
+}
+
+.nuevo_prestamo{
+    font-size: 30px;
+    color: grey;
+    margin-left: 85vh;    
+}
+
+.nuevo_prestamo:hover{
+    color:#004e92;
+    background-color: rgb(240, 239, 239);
+}
+
+.elemento_mes{
+    font-size:15px ;
+    margin-bottom: 0px;
+}
+.elemento_dia{
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+
+.elemento_saldo{
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.saldo_negativo{
+    color: rgb(212, 8, 8);
+}
+
+.saldo_positivo{
+    color: rgb(2, 85, 2);
+}
+
+.elemento_hora{
+    margin-bottom: 0px;
+}
+
+.vencida {
+    color: red;
+}
+
+#myChart{
+    z-index: 100;
+}
+
+/*********************************************/
+/************Table Accounts***************/
+
+#account {
+    z-index: -1;
+}
+
+.table {
+    width: 50%;
+}
+
+/*********************************************/
+/************404***************/
+#workingOnIt {
+    width: 800px;
+    height: 800px;
+    align-items: center;
+    /* box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%); */
+}
+
+
+#transfers {
+
+    height: 100vh;
+}
+
+#transaction, #lastMovements {
+    width: 40%;
+}
+
+.btn-terminos {
+    width: 90vh;
+}
+
+
+/*******************  NAV BAR  **************************/
+
+#circulo_nombre {
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(to left, #004e92, #000428);
+    /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+    border-radius: 50%;
+    text-align: left;
+
+}
+
+.dropbtn {
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;   
+    margin-left: -100px;
+    
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+   
+}
+
+/* .dropdown:hover .dropbtn {} */
+.dropdown_item{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#circulo_nombre:hover .dropdown-content {
+    display: block;
+    transition: 0.4s ease;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.list_item {
+    color: grey;
+    font-size: 25px;
+}
+
+.logout_button {
+    background-color: transparent;
+    border: none;
+    z-index: 10;
+    margin: 10px;
+}
+/******************* GRAFICO DE BARRAS***********/
+
+#newChart{
+    width: 103vh;
+}
+
+
+/*********************************************/
+/************RESPONSIVE***************/
+
+@media (max-width:768px) {
+
+
+    #main-information {
+        padding: 2rem;
+    }
+}

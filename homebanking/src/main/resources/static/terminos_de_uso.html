@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--BOOTSTRAP-->
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />>
+
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sidebar_style.css">
+
+    <!--BOX ICON-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+     <!--SWEET ALERT-->
+     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <title>Termninos de uso</title>
+</head>
+
+<body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
+
+    <main>
+        <div class="d-flex">
+
+            <div class="sidebar active">
+                <div class="logo_content">
+                    <div class="logo">
+                        <img src="img/logo_blanco_freebanking.png" class="img_logo">
+                        <div class="logo_name"> Freebanking</div>
+                    </div>
+                    <i class='bx bx-menu' id="boton"></i>
+                </div>
+                <ul class="nav_list">
+
+                    <li>
+                        <a href="accounts.html">
+                            <i class='bx bxs-home bx-tada-hover'></i>
+                            <span class="links_name">Inicio</span>
+                        </a>
+                        <span class="tooltip">Inicio</span>
+                    </li>
+
+                    <li>
+                        <a href="transfers.html">
+                            <i class='bx bx-transfer bx-tada-hover'></i>
+                            <span class="links_name">Transferencias</span>
+                        </a>
+                        <span class="tooltip">Transferencias</span>
+                    </li>
+
+                    <li>
+                        <a href="payment.html">
+                            <i class='bx bx-wallet bx-tada-hover'></i>
+                            <span class="links_name">Realizar Pago</span>
+                        </a>
+                        <span class="tooltip">Realizar Pago</span>
+                    </li>
+                    
+                    <li>
+                        <a href="404.html">
+                            <i class='bx bxs-bank bx-tada-hover'></i>
+                            <span class="links_name">Inversiones</span>
+                        </a>
+                        <span class="tooltip">Inversiones</span>
+                    </li>
+                    <li>
+                        <a href="404.html">
+                            <i class='bx bx-money-withdraw bx-tada-hover'></i>
+                            <span class="links_name">Prestamos</span>
+                        </a>
+                        <span class="tooltip">Prestamos</span>
+                    </li>
+                    <li>
+                        <a href="cards.html">
+                            <i class='bx bx-credit-card bx-tada-hover'></i>
+                            <span class="links_name">Tus tarjetas</span>
+                        </a>
+                        <span class="tooltip">Tus tarjetas</span>
+                    </li>
+
+                    <li>
+                        <a href="criptomonedas.html">
+                            <i class='bx bxl-bitcoin bx-tada-hover'></i>
+                            <span class="links_name">Critpmonedas</span>
+                        </a>
+                        <span class="tooltip">Cripto</span>
+                    </li>
+                    <li>
+                        <a href="ayuda.html">
+                            <i class='bx bx-help-circle bx-tada-hover'></i>
+                            <span class="links_name">Ayuda</span>
+                        </a>
+                        <span class="tooltip">Ayuda</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-cog icon bx-tada-hover'></i>
+                            <span class="links_name">Terminos de uso</span>
+                        </a>
+                        <span class="tooltip"> Terminos </span>
+                    </li>
+                </ul>
+                
+            </div>
+
+
+            <div class="d-flex flex-column" id="main-information">
+
+                <div id="accounts">
+                    <div class="d-flex" id="header">
+                        <h1 v-cloak> Hola, {{capitalizeWord(cliente)}} !! </h1>
+                        <!-- DROPDOWN MENU que se despliega al posarte sobra la inicial del cliente -->
+                        <div class="dropdown">
+                            <button class="dropbtn" id="circulo_nombre">
+                                <p v-cloak>{{toUpper(cliente[0])}}</p>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown_item"><i class='bx bxs-edit'></i>Configuracion</a>
+                                <a href="#" class="dropdown_item"><i class='bx bx-user'></i>Perfil</a>
+                                <hr>
+                                <a href="#"> <button v-on:click="cerrarSesion()"
+                                        class="logout_button dropdown_item"><i class='bx bx-log-out'></i>
+                                        Logout</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex flex-column align-items-center">
+                    <h1>Términos y Condiciones</h1>
+                    <h2>Condiciones Generales de Uso</h2>
+                    <p>Todos los productos y servicios prestados por FREEBANKING, se encuentran sometidas a la legislación
+                        vigente de la República Argentina.</p>
+    
+                    <button type="button" class="btn btn-light btn-terminos" data-toggle="collapse" data-target="#legales"> Termninos
+                        legales y condiciones</button>
+    
+                    <div id="legales" class="collapse">
+                        <br>
+                        <h3>Términos Legales y Condiciones</h3>
+                        <p>Lea atentamente las siguientes condiciones generales. Por el acceso a esta dirección y a
+                            cualquiera de sus páginas (en adelante la "Web") usted tendrá consideración de Usuario y se
+                            presume que acepta estas condiciones generales. El acceso a alguna de las páginas de esta Web
+                            puede estar limitado por las leyes y disposiciones de las distintas jurisdicciones de los
+                            países. Si usted se encuentra en esta circunstancia, puede no tener acceso a parte o a toda la
+                            Web de Freebanking.
+    
+                        <ul>
+                            <li>
+                                La información contenida en esta Web, incluidos productos y servicios, incluyendo pero no
+                                limitándose a, textos, gráficos, logos, imágenes, iconos y archivos, hardware y software,
+                                están
+                                protegidos por las leyes de Propiedad Intelectual. Los contenidos podrán ser utilizados como
+                                una
+                                herramienta de comunicación y/o información; cualquier otro uso, incluyendo la reproducción,
+                                modificación, distribución o transmisión sin la expresa autorización de FREEBANKING S.A. ,
+                                esta estrictamente prohibida.
+                            </li>
+                            <li>
+    
+                                Dicha información está destinada a su distribución o uso, básicamente a aquellas personas
+                                humanas que no sean menor de edad o aquellos que resultaren emancipados, y personas
+                                jurídicas
+                                (en adelante "Personas") con residencia en Argentina o que accedan desde la República
+                                Argentina,
+                                por lo que FREEBANKING declina toda responsabilidad por el acceso de
+                                "Personas" en jurisdicciones donde dicha distribución o uso pudieran ser contrarios a la
+                                normativa o regulación vigente.
+                            </li>
+                            <li>
+                                Ciertos productos y servicios pueden no estar disponibles o prohibidos en todas las
+                                jurisdicciones o para todas las Personas y, consecuentemente, FREEBANKING
+                                podrá restringir o rechazar el acceso a todo aquél que no cumpla los requisitos de
+                                residencia y
+                                acceso desde la República Argentina.
+                            </li>
+                            <li>
+                                FREEBANKING como entidad del Estado Nacional Argentino está sometido
+                                exclusivamente a la jurisdicción federal. Cuando sea actor en juicio, la competencia federal
+                                será concurrente con la justicia ordinaria de las provincias y la competencia nacional
+                                federal
+                                en lo civil y comercial de la Capital Federal de la República Argentina con la de la
+                                justicia
+                                nacional común. Queda facultado a no oponer la excepción jurisdiccional cuando actúe en
+                                países
+                                extranjeros, realizando actos comerciales como persona de derecho privado.
+    
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                    <hr>
+                    <button type="button" class="btn btn-light btn-terminos" data-toggle="collapse" data-target="#informacion_bursatil">
+                        Información Bursatil</button>
+    
+                    <div id="informacion_bursatil" class="collapse">
+                        <br>
+                        <h3>Información Financiera y Bursátil</h3>
+                        <p> 
+                            <ul>
+                                <li>
+                                    Esta Web no proporciona ningún tipo de recomendación de inversión, ni asesoramiento legal, fiscal,
+                                    ni de otra clase y nada de lo que en ella se incluye debe ser tomado como base para realizar
+                                    inversiones o tomar decisiones. Asimismo, la información contenida en esta Web se publica para su
+                                    utilización general y no tiene en cuenta objetivos específicos de inversión, situación financiera o
+                                    necesidades particulares de cualquier Persona. Antes de decidir sobre cualquier inversión, usted
+                                    debería obtener el asesoramiento profesional adecuado y específico. El valor de las inversiones
+                                    puede subir o bajar, circunstancia que el inversor debe asumir incluso a riesgo de no recuperar el
+                                    importe invertido, en parte o en su totalidad. Igualmente, el anuncio de rentabilidades pasadas, no
+                                    constituye promesa o garantía de rentabilidades futuras.
+                                </li>
+                                <li>
+                                    Los contenidos de esta Web tienen únicamente finalidad informativa y bajo ninguna circunstancia
+                                    deben usarse ni considerarse como oferta de venta, solicitud de una oferta de compra ni
+                                    recomendación para realizar cualquier otra transacción, salvo que así se indique expresamente.
+                                    Cualquier decisión de compra por parte del receptor, debería adoptarse teniendo en cuenta la
+                                    información pública existente sobre el valor, y en su caso, atendiendo al contenido del folleto
+                                    registrado en la página Web.
+                                </li>
+                            </ul>                       
+                           
+        
+                        </p>
+                    </div>
+                   
+    
+                    <hr>
+                    <button type="button" class="btn btn-light btn-terminos" data-toggle="collapse" data-target="#propiedad_intelectual">
+                        Propiedad Industrial e Intelectual</button>
+    
+                    <div id="propiedad_intelectual" class="collapse">
+                        <br>
+                        <h3>Propiedad Industrial e Intelectual</h3>
+                        <p>
+    
+                            Esta Web es propiedad de FREEBANKING. Los derechos de Propiedad Intelectual y
+                            derechos de explotación y reproducción de esta Web, de sus páginas, pantallas, la información
+                            que contienen, su apariencia y diseño, así como los vínculos ("hiperlinks") que se establezcan
+                            desde ella a otras páginas Web de cualquier sociedad de FREEBANKING, son
+                            propiedad exclusiva de éste salvo que se especifique otra cosa. Cualesquiera denominaciones,
+                            diseños y/o logotipos, así como los productos o servicios ofrecidos y reflejados en esta página
+                            web, son marcas debidamente registradas por el FREEBANKING y/o sus Sociedades
+                            Filiales. Cualquier uso indebido de las mismas por persona diferente de su legítimo titular
+                            podrá ser perseguido de conformidad con la legislación vigente. Los derechos de propiedad
+                            intelectual y marcas de terceros están destacados convenientemente y deben ser respetados por
+                            todo aquel que acceda a esta página Web. Solo para uso personal y privado se permite descargar
+                            los contenidos, copiar o imprimir cualquier página de esta Web. Queda prohibido reproducir,
+                            transmitir, modificar o suprimir la información, contenido o advertencias de esta Web sin la
+                            previa autorización expresa y por escrito de FREEBANKING.
+    
+                        </p>
+    
+                    </div>
+    
+                    <hr>
+                    <button type="button" class="btn btn-light btn-terminos" data-toggle="collapse" data-target="#generales">
+                        Generales</button>
+    
+                    <div id="generales" class="collapse">
+                        <br>
+                        <h3>General</h3>
+                        <p>Los presentes Términos Legales y Condiciones constituyen el entero acuerdo entre las partes y
+                            derogan cualquier acuerdo anterior entre las partes en esta materia. La declaración de que
+                            alguna de las disposiciones de estos Términos Legales y Condiciones fuese inválida o no
+                            ejecutable, no tendrá efecto alguno respecto de las demás provisiones de estos Términos Legales
+                            y Condiciones, las cuales permanecerán con total efecto y vigencia.</p>
+    
+                    </div>
+                </div>
+               
+
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Scripts para funcionalidades extras, Vue, iconos, Bootstrap, etc-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.iconify.design/2/2.1.1/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    
+
+    <!-- Scripts para los iconos de Box Icon-->
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+
+    <!--Jquery para poder hacer el preloader-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       
+
+    <!-- Scripts para funcionalidades de Javascript-->
+    <script src="Javascript/preloader.js"></script>
+    <script src="Javascript/index.js"></script>
+    <script src="Javascript/sidebar.js"></script>
+    <script src="Javascript/accounts.js"></script>
+
+  
+
+</body>
+
+</html>

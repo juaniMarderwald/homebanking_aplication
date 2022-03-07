@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Farro&display=swap');
+
+*{
+    padding: 0;
+    margin: 0px;
+    box-sizing: border-box; 
+
+}
+
+header{
+   
+    background: #000428;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+#logo{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+.cabecera{
+    padding-left: 600px;
+    padding-right: 600px ;
+}
+
+#central{
+    width: 100%;
+    height: 600px;
+    background-image: url(/img/inicio.jpg);
+    background-position: center;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+
+}
+
+h1,h3,h4{
+    color: #fff;
+    font-family: 'Antonio', sans-serif;
+}
+
+
+body{
+    background-color: #F8F8F8	;
+}
+
+.text_inside{
+    margin-left: 620px;
+    margin-top: 20px;
+    width: 600px;
+    height: 400px;
+    
+}
+
+.cards_promo{
+    margin: 10px;
+    background-color: white;
+    width: 650px;
+    height: 420px;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 10%);
+    font-family: 'Farro', sans-serif;
+}
+.cards{
+    margin-top:150px ;
+    display: flex;
+    justify-content: center;
+    padding-left: 620px;
+    width: 1600px;
+    height: auto;
+    
+}
+
+.texto_principal{
+    height: 200px;
+    width: 600px;
+}
+
+.img_cards{
+    height: 150px;
+    width: 150px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    padding: 10px 30px;
+    font-family: 'Farro', sans-serif;
+    border-radius: 30px;
+    background-color:#fff;
+    /* border-color: grey ; */
+    border: none;
+    color: grey;
+    font-size: 15px;
+    margin-left: 10px;
+
+}
+
+.btn:hover{
+    padding: 10px 30px;
+    font-family: 'Farro', sans-serif;
+    border-radius: 30px;
+    background-color:#fff;
+    /* border-color: red ; */
+    color: #01001C;
+    font-size: 15px;
+}
+
+footer{
+    margin-top: 400px;
+    padding: 100px 200px;
+    
+    background-color: white;
+}
+
+.iconify{
+    font-size: 1.5rem;
+    color: black;
+}
