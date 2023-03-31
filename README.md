@@ -1,10 +1,10 @@
 # homebanking_aplication
 
-Aplicación FUll Stack, realizada con las siguientes tecnologías: 
+<h1>Aplicación FUll Stack, realizada con las siguientes tecnologías:</h1> 
 
-FRONT END: HTML, CSS + BOOTSTRAP, JAVASCRIPT, VUE JS
+<h2>FRONT END: HTML, CSS + BOOTSTRAP, JAVASCRIPT, VUE JS</h2>
 
-BACKEND: JAVA, SPRING BOOT
+<h2>BACKEND: JAVA, SPRING BOOT</h2>
 
 Llevado a cabo con las buenas prácticas recomendadas y las tecnologías antes mencionadas, desarrollé esta aplicación durante el Bootcamp de programación Mindhub de Full Stack Java.
 
